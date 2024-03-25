@@ -175,10 +175,16 @@ section {
   }
 
   .video-box {
-    background: url("../img/about.png") center center no-repeat;
-    background-size: contain;
-    min-height: 300px;
+    /* background: url("../img/about.png") center center no-repeat; Removido */
+    /* background-size: contain; Removido */
+    min-height: 300px; // Assegura que o espaço está reservado
+    display: flex; // Utilizado para centralizar o conteúdo
+    justify-content: center; // Centraliza horizontalmente
+    align-items: center; // Centraliza verticalmente
+    
+    // Se desejar, você pode adicionar mais estilos aqui para ajustar a apresentação
   }
+  
 
   .play-btn {
     width: 94px;

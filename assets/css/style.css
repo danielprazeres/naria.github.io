@@ -749,9 +749,12 @@ section {
 }
 
 .about .video-box {
-  background: url("../img/about.png") center center no-repeat;
-  background-size: contain;
-  min-height: 300px;
+  /* background: url("../img/about.png") center center no-repeat; Esta linha é removida */
+  /* background-size: contain; Esta propriedade também é removida */
+  min-height: 300px; /* Mantenha para garantir que a área de visualização esteja reservada */
+  display: flex; /* Adicionado para garantir alinhamento central */
+  justify-content: center; /* Alinha horizontalmente ao centro */
+  align-items: center; /* Alinha verticalmente ao centro */
 }
 
 .about .play-btn {
@@ -821,6 +824,18 @@ section {
   border-radius: 0;
 }
 
+.dotlottie-player-responsive {
+  width: 50vw; /* Ocupa 50% da largura da viewport */
+  height: 50vw; /* Altura igual à largura para manter a proporção */
+}
+
+@media (max-width: 768px) { /* Para telas menores */
+  .dotlottie-player-responsive {
+    width: 80vw; /* Aumenta para ocupar mais espaço em dispositivos menores */
+    height: 80vw;
+  }
+}
+
 @keyframes pulsate-btn {
   0% {
     transform: scale(0.6, 0.6);
@@ -848,6 +863,14 @@ section {
   font-size: 32px;
   padding-right: 10px;
   line-height: 1;
+  /* Define o ícone em preto e branco */
+  filter: grayscale(100%);
+  transition: ease-in-out 0.3s; /* Adiciona transição para o efeito de hover */
+}
+
+.features .icon-box:hover i {
+  /* Remove o filtro quando o hover é aplicado */
+  filter: none;
 }
 
 .features .icon-box h3 {
@@ -870,6 +893,7 @@ section {
 .features .icon-box:hover {
   background: #ebebff;
 }
+
 
 /*--------------------------------------------------------------
 # Mostrador Section
